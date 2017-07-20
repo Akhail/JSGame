@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import Figure from '../Figure';
+import Board from '../../containers/Board';
 
 
 const App = () => (
   <div>
-    <Figure figure={false} />
+    <h2>Juego Tres en raya</h2>
+    <Board />
   </div>
 )
 
