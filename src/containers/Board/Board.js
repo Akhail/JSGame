@@ -4,7 +4,7 @@ import './Board.css';
 class Board extends React.Component {
   constructor() {
     super();
-    this.state = { board: [['','',''],['','',''],['','','']], isX: true };
+    this.state = { board: [['','',''],['','',''],['','','']], isX: true, gameOver: '' };
   }
   
   click = (y, x) => (e) => {
@@ -15,6 +15,9 @@ class Board extends React.Component {
         board: temp,
         isX: !this.state.isX
       })
+    }
+    if(temp.every((row) => row.every((n) => n !== ''))) {
+      this.setState({gameOver: 'Empate'})
     }
   }
 
@@ -31,18 +34,25 @@ class Board extends React.Component {
       </div>
     );
   }
-
+  newGame = () => {
+    this.setState({
+      board: [['','',''],['','',''],['','','']],
+      gameOver: ''
+    })
+  }
   render() {
+    let go = this.state.gameOver;
+    let board = this.state.board;
     return (
       <div className="board">
-        {this.state.board.map(this.renderRow)}
+        <input type="button" value="vs Local" onClick={this.newGame}/>
+        <input type="button" value="vs Humano" onClick={this.newGame}/>
+        {board.map(this.renderRow)}
+        {go !== '' && <div className="game-over">{go}</div>}        
       </div>
     );
   }
 
-  componentDidMount() {
-    this.setState({ someKey: 'otherValue' });
-  }
 }
 
 export default Board;

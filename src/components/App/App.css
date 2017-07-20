@@ -1,5 +1,7 @@
 .app {
-
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center
 }
 
 .app > h2 {
@@ -9,12 +11,8 @@
   padding: 10px;
   color: white;
   font-size: 1.5em;
+  flex: 1 1 100%;
   background: #1e6aab;
-}
-
-.app > .game {
-  display: flex;
-  justify-content: center;
 }
 
 .app > .footer {

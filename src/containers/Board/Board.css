@@ -1,10 +1,48 @@
 .board {
     display: table;
     width: 320px;
+    background: white;
+    z-index: 0;
     border-collapse: collapse;
+    position: relative;
 }
 
 .board > div {
     display: table-row;
     width: 100%;
+}
+
+.board > input {
+    position: fixed;
+    max-height: 50px;
+    width: 200px;
+    top: 0; bottom: 0;
+    margin: auto;
+    background: seagreen;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    box-shadow: -2px -2px 1px #777;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.board > input:first-child {
+    left: 10%;
+}
+
+.board > input:nth-child(2) {
+    right: 10%;
+}
+
+.game-over {
+    position: fixed;
+    bottom: 15%;
+    color: white;
+    text-align: center;
+    right: 0;
+    padding: 10px;
+
+    background: teal;
 }

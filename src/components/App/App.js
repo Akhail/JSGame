@@ -6,11 +6,7 @@ import Board from '../../containers/Board';
 const App = () => (
   <div className="app">
     <h2>Juego Tres en raya</h2>
-    <div className="game">
-
-      <Board />
-    </div>
-
+    <Board />
     <div className="footer">
       <h4>Integrantes:</h4>
       <a href="https://github.com/Akhail/">Betancourt Michel</a>
