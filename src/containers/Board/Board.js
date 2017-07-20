@@ -1,5 +1,7 @@
 import React from 'react';
 import Figure from '../../components/Figure';
+import TicTacToe from '../../utils/TicTacToe';
+
 import './Board.css';
 class Board extends React.Component {
   constructor() {
@@ -10,11 +12,15 @@ class Board extends React.Component {
   click = (y, x) => (e) => {
     let temp = this.state.board;
     if(temp[y][x] === ''){
-      temp[y][x] = this.state.isX ? 'x' : 'c';
+      temp[y][x] = this.state.isX ? 'X' : 'O';
       this.setState({
         board: temp,
         isX: !this.state.isX
       })
+    }
+    let win = TicTacToe.checkWin(temp);
+    if(win) {
+      this.setState({gameOver: `Gano ${win}`})
     }
     if(temp.every((row) => row.every((n) => n !== ''))) {
       this.setState({gameOver: 'Empate'})
