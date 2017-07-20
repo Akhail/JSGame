@@ -1,0 +1,17 @@
+.figure {
+    display: table-cell;
+    height: 106px;
+    font-size: 0;
+    width: 106px;
+    border: #444 solid 2px;
+}
+
+.figure > svg {
+    stroke: #555;
+    stroke-width: 6;
+    fill: none;
+    margin: auto;
+    display: block;
+    width: 100px;
+    height: 100px;
+}

@@ -1,0 +1,10 @@
+.board {
+    display: table;
+    width: 320px;
+    border-collapse: collapse;
+}
+
+.board > div {
+    display: table-row;
+    width: 100%;
+}
